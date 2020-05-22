@@ -57,11 +57,14 @@ def makeGraph(graphDataPath):
     for i in range(len(xList)):
         xCoordinate = xList[i]
         yCoordinate = yList[i]
-        isDetectGerms = isDetectGermsList[i]
+        isDetectGerms = isDetectGermsList[i].strip(string.whitespace)
+        print("here is the isDetectGerms " + isDetectGerms)
         if isDetectGerms == "true":
           detectGermsListX.append(xCoordinate)
           detectGermsListY.append(yCoordinate)
-    germDetectedLabel, = plt.plot(detectGermsListX, detectGermsListY, marker="o", linewidth = 5, label = "Germs Detected", color="red")
+          print("detectGermsListX " + str(detectGermsListX))
+          print("detectGermsListY " + str(detectGermsListY))
+    germDetectedLabel, = plt.plot(detectGermsListX, detectGermsListY, marker="o", linestyle = "None", linewidth = 3, label = "Germs Detected", color="red")
 
 # Add titles, legends, etc
     plt.title("Germ Detection Location in Robot Path")
