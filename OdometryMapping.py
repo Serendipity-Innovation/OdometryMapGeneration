@@ -1,4 +1,7 @@
 #change path directory per computer
+import matplotlib.pyplot as plt
+import csv
+
 def getDataX(graphDataPath):
     x = []
     with open(graphDataPath, 'r') as csvfile:
@@ -6,8 +9,7 @@ def getDataX(graphDataPath):
         for row in plots:
             x.append(int(row[0]))
     return x
-import matplotlib.pyplot as plt
-import csv
+
 
 def getDataY(graphDataPath):
     y = []
@@ -46,7 +48,7 @@ def makeGraph(graphDataPath):
         xCoordinate = xList[i]
         yCoordinate = yList[i]
         isDetectGermsList = isDetectGermsList[i]
-        if isDetectGermsList = "true":
+        if isDetectGermsList == "true":
             plt.plot(xCoordinate,yCoordinate,marker="o")
         else:
             plt.plot(xCoordiante,yCoordinate,maker="-")
