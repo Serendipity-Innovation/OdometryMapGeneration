@@ -1,4 +1,4 @@
-
+#change path directory per computer
 def getDataX(graphDataPath):
     x = []
     with open(graphDataPath, 'r') as csvfile:
@@ -42,12 +42,24 @@ def makeGraph(graphDataPath):
     yList = getDataY(graphDataPath)
     isDetectGermsList = getDataIsDetectGerms(graphDataPath)
 # plot the data
-    for xCoordinate
-    plt.plot(xList,yList,marker="-")
+    for i in range(len(xList)):
+        xCoordinate = xList[i]
+        yCoordinate = yList[i]
+        isDetectGermsList = isDetectGermsList[i]
+        if isDetectGermsList = "true":
+            plt.plot(xCoordinate,yCoordinate,marker="o")
+        else:
+            plt.plot(xCoordiante,yCoordinate,maker="-")
+        
     plt.title("Germ Detection Location in Robot Path")
     plt.xlabel("X-Axis")
     plt.ylabel("Y-Axis")
     plt.show()
+
+def main():
+    version = getVersion()
+    makeGraph("/Users/JustKyle-ngaround/Desktop/odometryGraphData/odometryMapData"
+                + version + ".txt")
     
     
     
